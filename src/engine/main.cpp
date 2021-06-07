@@ -1164,6 +1164,7 @@ int getclockmillis()
 }
 
 VAR(numcpus, 1, 1, 16);
+VAR(doupdateparticles, 0, 1, 1); // menu closeby depthfx
 
 int main(int argc, char **argv)
 {
@@ -1375,7 +1376,8 @@ int main(int argc, char **argv)
 
         // miscellaneous general game effects
         recomputecamera();
-        updateparticles();
+        if(1 == doupdateparticles)
+            updateparticles();
         updatesounds();
 
         if(minimized) continue;
