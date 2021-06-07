@@ -1002,6 +1002,8 @@ void debugparticles()
 
 void renderparticles(bool mainpass)
 {
+    if(0 == doupdateparticles) return;
+
     canstep = mainpass;
     //want to debug BEFORE the lastpass render (that would delete particles)
     if(dbgparts && mainpass) loopi(sizeof(parts)/sizeof(parts[0])) parts[i]->debuginfo();
@@ -1099,6 +1101,8 @@ VARP(maxparticledistance, 256, 1024, 4096);
 
 static void splash(int type, int color, int radius, int num, int fade, const vec &p, float size, int gravity)
 {
+    if(0 == doupdateparticles) return;
+
     if(camera1->o.dist(p) > maxparticledistance && !seedemitter) return;
     float collidez = parts[type]->collide ? p.z - raycube(p, vec(0, 0, -1), COLLIDERADIUS, RAY_CLIPMAT) + (parts[type]->collide >= 0 ? COLLIDEERROR : 0) : -1; 
     int fmin = 1;
