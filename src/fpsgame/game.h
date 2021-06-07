@@ -3,6 +3,8 @@
 
 #include "cube.h"
 
+extern int soundvol;
+
 // console message types
 
 enum
@@ -716,7 +718,6 @@ namespace game
     extern int respawnent;
     extern int following;
     extern int smoothmove, smoothdist;
-    extern int soundvol;
 
     extern bool clientoption(const char *arg);
     extern fpsent *getclient(int cn);
