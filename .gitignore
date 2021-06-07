@@ -1,0 +1,16 @@
+/src/sauer_client
+/src/sauer_server
+/src/enet/*.o
+/src/enet/libenet.a
+/src/engine/*.o
+/src/engine/engine.h.gch
+/src/fpsgame/*.o
+/src/fpsgame/game.h.gch
+/src/shared/*.o
+/src/shared/cube.h.gch
+/src/.idea
+/bin_unix
+/data
+/config
+/packages
+/.idea
