@@ -977,11 +977,13 @@ namespace game
         updatebouncers(curtime); // need to do this after the player shoots so grenades don't end up inside player's BB next frame
         fpsent *following = followingplayer();
         if(!following) following = player1;
-        loopv(players)
-        {
-            fpsent *d = players[i];
-            checkattacksound(d, d==following);
-            checkidlesound(d, d==following);
+        if(0 < soundvol) {
+            loopv(players)
+            {
+                fpsent *d = players[i];
+                checkattacksound(d, d == following);
+                checkidlesound(d, d == following);
+            }
         }
     }
 
